@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20220817051410) do
     t.string   "token",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["token"], name: "index_applications_on_token", unique: true
   end
 
 end
