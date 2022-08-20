@@ -41,12 +41,12 @@ class Api::ChatsController < ApplicationController
 
   private
     def set_application
-      @application = Application.find_by(token: params[:application_id])
+      @application = Application.find_by!(token: params[:application_id])
     end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_chat
-      @chat = @application.chats.find_by(number: params[:id])
+      @chat = @application.chats.find_by!(number: params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
