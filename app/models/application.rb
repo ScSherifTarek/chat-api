@@ -5,4 +5,13 @@ class Application < ApplicationRecord
     def generate_token
         self[:token] = SecureRandom.uuid
     end
+
+    def as_json(options={})
+        {
+          :name => name,
+          :token => token,
+          :created_at => created_at,
+          :updated_at => updated_at
+        }
+    end
 end
