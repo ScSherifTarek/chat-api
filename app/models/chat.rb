@@ -4,7 +4,8 @@ class Chat < ApplicationRecord
   before_create :generate_number
 
   def generate_number
-    self[:number] = Chat.where(:application_id => self.application_id).count + 1
+    chatNumber = REDIS.incr("apps:#{self.application_id}:chats_counter")
+    self[:number] = chatNumber 
   end
 
   def as_json(options={})
