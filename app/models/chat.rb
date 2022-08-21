@@ -4,8 +4,7 @@ class Chat < ApplicationRecord
   validates :name, :application_id, presence: true
 
   def generate_number
-    chatNumber = REDIS.incr("apps:#{self.application_id}:chats_counter")
-    self.number = chatNumber 
+    self.number = REDIS.incr("apps:#{self.application_id}:chats_counter")
   end
 
   def as_json(options={})

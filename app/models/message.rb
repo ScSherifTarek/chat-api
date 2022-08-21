@@ -6,10 +6,10 @@ class Message < ApplicationRecord
   validates :body, :chat_id, presence: true
 
   def generate_number
-    applicationId = self.chat.application_id
-    chatNumber = self.chat.number
-    messageNumber = REDIS.incr("apps:#{applicationId}:chats:#{chatNumber}:messages_counter")
-    self.number = messageNumber 
+    application_id = self.chat.application_id
+    chat_number = self.chat.number
+    message_number = REDIS.incr("apps:#{application_id}:chats:#{chat_number}:messages_counter")
+    self.number = message_number 
   end
 
   def as_json(options={})
@@ -27,7 +27,7 @@ class Message < ApplicationRecord
     hash
   end
 
-  def Message.searchInChat(chat, q)
+  def self.search_in_chat(chat, q)
     Message.search query: {
       bool: {
         must: {
