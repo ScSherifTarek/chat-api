@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20220820173320) do
+ActiveRecord::Schema.define(version: 20220821043633) do
 
   create_table "applications", force: :cascade do |t|
     t.string   "name",       null: false
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 20220820173320) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.index ["application_id"], name: "index_chats_on_application_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "body",       null: false
+    t.integer  "number",     null: false
+    t.integer  "chat_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_id"], name: "index_messages_on_chat_id"
   end
 
 end
