@@ -2,3 +2,7 @@ update_counters:
   cron: "20 * * * *"
   class: "UpdateCountersJob"
   queue: default
+UpdateElasticSearchJob:
+  cron: "10 * * * *"
+  class: "UpdateElasticSearchJob"
+  queue: default
