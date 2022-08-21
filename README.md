@@ -12,3 +12,5 @@ docker-compose run sidekiq rails runner "UpdateElasticSearchJob.perform_now"
 docker-compose build
 docker-compose up
 ```
+## Endpoints
+You would find a postman collection for the endpoints this app is efforing [Chats API.postman_collection.json](Chats%20API.postman_collection.json)

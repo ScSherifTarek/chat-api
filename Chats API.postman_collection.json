@@ -1,0 +1,442 @@
+{
+	"info": {
+		"_postman_id": "4163f9f8-0ace-49ec-8c4a-08cbc533001b",
+		"name": "Chats API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Applications",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/applications",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/applications/{{APPLICATION_TOKEN}}",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"applications",
+								"{{APPLICATION_TOKEN}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"My first application\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/applications",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"My best application\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/applications/4bca7b8c-a5bf-4c7e-be3b-20515bfe3291",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"applications",
+								"4bca7b8c-a5bf-4c7e-be3b-20515bfe3291"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/applications/b582d7ab-0efb-4f9a-b8c6-0100ebd5b150",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"applications",
+								"b582d7ab-0efb-4f9a-b8c6-0100ebd5b150"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chats",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/applications/{{APPLICATION_TOKEN}}/chats",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"applications",
+								"{{APPLICATION_TOKEN}}",
+								"chats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/applications/{{APPLICATION_TOKEN}}/chats/4",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"applications",
+								"{{APPLICATION_TOKEN}}",
+								"chats",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"My last chat\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/applications/{{APPLICATION_TOKEN}}/chats",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"applications",
+								"{{APPLICATION_TOKEN}}",
+								"chats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"My last chat updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/applications/{{APPLICATION_TOKEN}}/chats/4",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"applications",
+								"{{APPLICATION_TOKEN}}",
+								"chats",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/applications/{{APPLICATION_TOKEN}}/chats/4",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"applications",
+								"{{APPLICATION_TOKEN}}",
+								"chats",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Messages",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/applications/{{APPLICATION_TOKEN}}/chats/{{CHAT_NUMBER}}/messages",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"applications",
+								"{{APPLICATION_TOKEN}}",
+								"chats",
+								"{{CHAT_NUMBER}}",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/applications/{{APPLICATION_TOKEN}}/chats/{{CHAT_NUMBER}}/messages/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"applications",
+								"{{APPLICATION_TOKEN}}",
+								"chats",
+								"{{CHAT_NUMBER}}",
+								"messages",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"body\": \"My message\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/applications/{{APPLICATION_TOKEN}}/chats/{{CHAT_NUMBER}}/messages/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"applications",
+								"{{APPLICATION_TOKEN}}",
+								"chats",
+								"{{CHAT_NUMBER}}",
+								"messages",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"body\": \"My updated message\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/applications/{{APPLICATION_TOKEN}}/chats/{{CHAT_NUMBER}}/messages/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"applications",
+								"{{APPLICATION_TOKEN}}",
+								"chats",
+								"{{CHAT_NUMBER}}",
+								"messages",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Destroy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/applications/{{APPLICATION_TOKEN}}/chats/{{CHAT_NUMBER}}/messages/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"applications",
+								"{{APPLICATION_TOKEN}}",
+								"chats",
+								"{{CHAT_NUMBER}}",
+								"messages",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/applications/{{APPLICATION_TOKEN}}/chats/{{CHAT_NUMBER}}/messages/search?q=e&page=1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"applications",
+								"{{APPLICATION_TOKEN}}",
+								"chats",
+								"{{CHAT_NUMBER}}",
+								"messages",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "e"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:3000/api",
+			"type": "default"
+		},
+		{
+			"key": "APPLICATION_TOKEN",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "CHAT_NUMBER",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
