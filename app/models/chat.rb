@@ -13,6 +13,7 @@ class Chat < ApplicationRecord
     {
       :name => name,
       :number => number,
+      :messages_count => messages_count,
       :created_at => created_at,
       :updated_at => updated_at
     }

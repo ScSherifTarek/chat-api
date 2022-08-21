@@ -10,22 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20220821043633) do
+ActiveRecord::Schema.define(version: 20220821052246) do
 
   create_table "applications", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.string   "token",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",                    null: false
+    t.string   "token",                   null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "chats_count", default: 0
     t.index ["token"], name: "index_applications_on_token", unique: true
   end
 
   create_table "chats", force: :cascade do |t|
-    t.string   "name",           null: false
-    t.integer  "number",         null: false
-    t.integer  "application_id", null: false
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string   "name",                       null: false
+    t.integer  "number",                     null: false
+    t.integer  "application_id",             null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "messages_count", default: 0
     t.index ["application_id"], name: "index_chats_on_application_id"
   end
 

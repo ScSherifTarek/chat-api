@@ -1,0 +1,4 @@
+update_counters:
+  cron: "* * * * *"
+  class: "UpdateCountersJob"
+  queue: default
