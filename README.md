@@ -1,24 +1,13 @@
-# README
+# Chats API
+Simple Chat API uses Redis, Elastic Search, Queue Management, and built in Ruby on Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Installation steps
+Assuming you already have docker compose installed, clone the repo and run the following commands to start your app:
+```
+cd development/
+docker-compose run web bundle install
+docker-compose run web rails db:setup
+docker-compose run web rails db:migrate
+docker-compose build
+docker-compose up
+```
