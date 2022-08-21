@@ -1,4 +1,7 @@
 class Message < ApplicationRecord
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+  
   belongs_to :chat
   validates :body, :chat_id, presence: true
 
@@ -15,6 +18,29 @@ class Message < ApplicationRecord
       :number => number,
       :created_at => created_at,
       :updated_at => updated_at
+    }
+  end
+
+  def as_indexed_json(options={})
+    hash = self.as_json()
+    hash['chat_id'] = self.chat_id
+    hash
+  end
+
+  def Message.searchInChat(chat, q)
+    Message.search query: {
+      bool: {
+        must: {
+          wildcard: {
+            body: "*#{q}*"
+          }
+        },
+        filter: {
+          term: {
+            chat_id: "#{chat.id}"
+          }
+        }
+      }
     }
   end
 end

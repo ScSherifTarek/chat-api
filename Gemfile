@@ -43,3 +43,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "sidekiq", "~> 5.2"
 gem "sidekiq-cron", "~> 1.7"
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'

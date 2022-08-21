@@ -41,6 +41,11 @@ class Api::MessagesController < ApplicationController
     @message.destroy
   end
 
+  # GET /messages/search
+  def search
+    render json: Message.searchInChat(@chat, params.require(:q)).records
+  end
+
   private
     def set_application
       @application = Application.find_by!(token: params[:application_id])
