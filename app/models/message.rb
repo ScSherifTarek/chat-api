@@ -1,7 +1,6 @@
 class Message < ApplicationRecord
   belongs_to :chat
   validates :body, :chat_id, presence: true
-  before_create :generate_number
 
   def generate_number
     applicationId = self.chat.application_id
