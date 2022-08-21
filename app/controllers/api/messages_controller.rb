@@ -43,7 +43,7 @@ class Api::MessagesController < ApplicationController
 
   # GET /messages/search
   def search
-    render json: Message.search_in_chat(@chat, params.require(:q)).records
+    render json: Message.search_in_chat(@chat, params.require(:q)).page(params[:page]).records
   end
 
   private
