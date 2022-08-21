@@ -17,12 +17,9 @@ class Api::ChatsController < ApplicationController
   # POST /chats
   def create
     @chat = @application.chats.build(chat_params)
-
-    if @chat.save
-      render json: @chat, status: :created
-    else
-      render json: @chat.errors, status: :unprocessable_entity
-    end
+    @chat.generate_number
+    CreateChatJob.perform_later @chat.attributes
+    render json: @chat, status: :created
   end
 
   # PATCH/PUT /chats/1
