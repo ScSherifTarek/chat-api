@@ -6,7 +6,7 @@ class Message < ApplicationRecord
     applicationId = self.chat.application_id
     chatNumber = self.chat.number
     messageNumber = REDIS.incr("apps:#{applicationId}:chats:#{chatNumber}:messages_counter")
-    self[:number] = messageNumber 
+    self.number = messageNumber 
   end
 
   def as_json(options={})

@@ -5,7 +5,7 @@ class Chat < ApplicationRecord
 
   def generate_number
     chatNumber = REDIS.incr("apps:#{self.application_id}:chats_counter")
-    self[:number] = chatNumber 
+    self.number = chatNumber 
   end
 
   def as_json(options={})
