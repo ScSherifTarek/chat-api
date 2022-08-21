@@ -18,9 +18,13 @@ class Api::MessagesController < ApplicationController
   # POST /messages
   def create
     @message = @chat.messages.build(message_params)
-    @message.generate_number
-    CreateMessageJob.perform_later @message.attributes
-    render json: @message, status: :created
+    if @chat.valid?
+      @message.generate_number
+      CreateMessageJob.perform_later @message.attributes
+      render json: @message, status: :created
+    else
+      render json: @message.errors, status: :unprocessable_entity
+    end
   end
 
   # PATCH/PUT /messages/1
