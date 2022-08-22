@@ -6,7 +6,7 @@ Assuming you already have docker compose installed, clone the repo and run the f
 ```
 cd development/
 docker-compose run web bundle install
-docker-compose run web rails db:setup
+docker-compose run web rails db:create
 docker-compose run web rails db:migrate
 docker-compose run sidekiq rails runner "UpdateElasticSearchJob.perform_now"
 docker-compose build
