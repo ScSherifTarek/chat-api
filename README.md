@@ -13,4 +13,4 @@ docker-compose build
 docker-compose up
 ```
 ## Endpoints
-You would find a postman collection for the endpoints this app is efforing [Chats API.postman_collection.json](Chats%20API.postman_collection.json)
+You would find a postman collection for the endpoints this app is offering at [Chats API.postman_collection.json](Chats%20API.postman_collection.json)
